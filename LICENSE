@@ -25,3 +25,19 @@ $writer = new \Zend\Log\Writer\Stream(BP . '/var/log/test1.log');
 $logger = new \Zend\Log\Logger();
 $logger->addWriter($writer);
 $logger->info($e->getTraceAsString());
+
+
+$percentValue = 100;
+                            $arrVote = [];
+
+                            foreach($ratingVotes as $vote) {
+                                $arrVote[] = $vote['percent'];
+                            }
+                            if($arrVote) {
+                                $percentValue = round(array_sum($arrVote) / count($arrVote));
+                            }
+                            $reviewData['reviewRating'] = [
+                                '@type'       => 'Rating',
+                                'ratingValue' => strval($percentValue),
+                                'bestRating'  => '100'
+                            ];
