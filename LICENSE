@@ -1,4 +1,8 @@
-$( document ).ready(function() {
+<script>
+        require(['jquery'], function ($) {
+            $( document ).ready(function() {
                 $(".owl-prev span").css("color", "yellow");
                 $(".owl-next span").css("color", "yellow");
             });
+        });
+</script>
